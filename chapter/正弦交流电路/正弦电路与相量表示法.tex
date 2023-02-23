@@ -1,0 +1,34 @@
+\section{\K 正弦电路与相量表示法}
+\Par 交流电的电压与电流往往呈现周期性变化,由于最简单的周期性变化就是简谐变化,因此我们先来研究简谐交流电.在电工学中,我们一般用正弦函数来表示电压或电流的变化
+\begin{equation}
+    i=I_m\sin \left( \omega t+\varphi _0 \right) 
+\end{equation}
+其中,$I_m$表示电流的最大值,称为\textbf{幅值};$\omega $反映电流变化的快慢,称为\textbf{角频率};$\varphi _0$称为\textbf{初相位}.此三者唯一确定了一个正弦交流电的变化,因此被称作正弦交流电的\hl{三要素}.
+
+\Par 除了瞬时值$i$外,在工程中常用的参量还有$I$,它被称作\textbf{有效值}.有效值的定义是:某周期电流$i$通过电阻$R$在一个周期内产生的热量,和另一个直流电流$I$通过同样大小的电阻,在相等的时间内产生的热量相等,那么这个周期性变化的电流$i$的有效值在数值上就等于这个直流电流$I$.简言之,就是
+\begin{equation}
+    I^2RT=\int_0^T{i^2Rdt}
+\end{equation}
+可以算得正弦交流电的等效电流/电压为
+\begin{align}
+	I&=\frac{I_m}{\sqrt{2}}\\
+	U&=\frac{U_m}{\sqrt{2}}
+\end{align}
+
+\Par 对于一个复数$z=x+\mathrm{i}y$,我们可以将它写作指数形式
+\begin{equation}
+    z=\rho \mathrm{e}^{\mathrm{i}\theta}
+\end{equation}
+或简写为
+\begin{equation}
+    z=\rho \phase{\theta } 
+\end{equation}
+我们注意到,一个复数由两个元素唯一确定,分别是$\rho $和$\theta $,那么我们能不能把它们与三角函数联系起来呢？
+\begin{equation*}
+    \rho =I\,\, \&  \theta =\varphi _0
+\end{equation*}
+至于$\omega $,由于响应的频率等于激励的频率,因此在计算中我们不需要求这一项,从而我们将正弦交流电的三角函数形式与复数形式建立了联系,并称之为\hl{相量式}.
+\begin{equation}
+    \dot{U}=U\left( \cos \varphi _0+\mathrm{i}\sin \varphi _0 \right) =U\mathrm{e}^{\mathrm{i}\varphi _0}=U \phase{\varphi _0}
+\end{equation}
+注意,相量式只是可以用来表示正弦函数,但是二者并不相等.

@@ -1,0 +1,75 @@
+\section{\K 三相异步电动机的机械特性}
+\Par 由于转子产生的感应电流$\dot{I}$滞后于转子电动势$\dot{E}$,其相位差为$\varphi $,又由于转矩$T\propto $电磁功率$P$,因此
+\begin{equation}\label{equ:转矩原理公式}
+    T=K_T\varPhi I\cos \varphi 
+\end{equation}
+其中,$K_T$为电机的结构参数,我们根据上一节中得到的公式
+\begin{equation*}
+    \begin{cases}
+        E_1\approx U_1\\
+        I_2=\frac{sE_{20}}{\sqrt{R_{2}^{2}+\left( sX_{20} \right) ^2}}\\
+        \cos \varphi =\frac{R}{\sqrt{R_{2}^{2}+\left( sX_{20} \right) ^2}}\\
+        \varPhi =\frac{U_1}{4.44f_1N_1}\\
+        E_{20}=4.44f_1N_2\varPhi\\
+    \end{cases}
+\end{equation*}
+代入式\ref{equ:转矩原理公式}可以得到
+\begin{equation}
+    T=K\cdot \frac{sR_2U_{1}^{2}}{R_{2}^{2}+\left( sX_{20} \right) ^2}
+\end{equation}
+其中
+\begin{equation*}
+    K=\frac{K_TN_2}{4.44f_1N_{1}^{2}}
+\end{equation*}
+$s$为转差率,$U_1$为电源电压,$R_2$为转子每相电阻,$X_{20}$为起动时转子的感抗.
+\begin{enumerate}
+    \item[\circledtext{1}]额定转矩
+    
+    \Par 当阻力矩$T_C$与动力矩$T$相等时,转子等速转动
+    \begin{equation*}
+        T=T_2+T_0\approx T_2
+    \end{equation*}
+    其中,$T_0$为空载损耗转矩,由于其很小故予以省略
+    \begin{equation*}
+        T\approx T_2=\frac{P}{\frac{2\pi n}{60}}=9.55\frac{P_2}{n}
+    \end{equation*}
+    上式中各参量的单位为
+    \begin{equation*}
+        \begin{matrix}
+            \text{参量}&		\text{单位}\\
+            T&		\mathrm{N}\cdot \mathrm{m}\\
+            n&		\mathrm{r}/\min\\
+            P&		\mathrm{W}\\
+        \end{matrix}
+    \end{equation*}
+    若功率用$\mathrm{kW}$表示,则有
+    \begin{equation}\label{equ:额定转矩}
+        \mathrm{T}=9550\cdot \frac{P_2}{n}
+    \end{equation}
+
+    \item[\circledtext{2}]最大转矩
+    
+    \Par 根据
+    \begin{equation*}
+        T=K\cdot \frac{sR_2U_{1}^{2}}{R_{2}^{2}+\left( sX_{20} \right) ^2}
+    \end{equation*}
+    对转差率$s$求导可以得到
+    \begin{equation*}
+        \frac{\mathrm{d}T}{\mathrm{d}s}=0\Longrightarrow s_m=\frac{R_2}{X_{20}}
+    \end{equation*}
+    此时
+    \begin{equation}
+        T_{\max}=K\cdot \frac{U_{1}^{2}}{2X_{20}}
+    \end{equation}
+    当转矩增大,电机电流也会增大,当$T>T_{\max} $时,电机将严重过热,因此$T$不能长期大于$T_{\max }$,同时定义\textbf{过载系数}$\lambda $
+    \begin{equation}
+        \lambda \coloneqq \frac{T_{\max}}{T}
+    \end{equation}
+
+    \item[\circledtext{3}]起动转矩
+    
+    \Par 起动时,$n=0,s=1$,代入式\ref{equ:额定转矩}即可得到
+    \begin{equation}
+        T_{st}=K\frac{R_2U_{1}^{2}}{R_{2}^{2}+X_{20}^{2}}
+    \end{equation}
+\end{enumerate}

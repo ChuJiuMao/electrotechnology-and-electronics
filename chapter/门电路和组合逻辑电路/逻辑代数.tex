@@ -1,0 +1,52 @@
+\section{\K 逻辑代数}
+\Par 我们先给出基础的9条规则
+\begin{equation*}
+    \begin{matrix}
+        \begin{aligned}
+        \boldsymbol{A}\cdot 1&=\boldsymbol{A}\\
+        \boldsymbol{A}\cdot 0&=0\\
+        \boldsymbol{A}\cdot \boldsymbol{A}&=\boldsymbol{A}\\
+        \boldsymbol{A}\cdot \overline{\boldsymbol{A}}&=0\\
+    \end{aligned}&		\begin{aligned}
+        \boldsymbol{A}+1&=1\\
+        \boldsymbol{A}+0&=\boldsymbol{A}\\
+        \boldsymbol{A}+\boldsymbol{A}&=\boldsymbol{A}\\
+        \boldsymbol{A}+\overline{\boldsymbol{A}}&=1\\
+    \end{aligned}&		\begin{array}{c}
+        \overline{\overline{\boldsymbol{A}}}=\boldsymbol{A}\\
+        \\
+        \\
+        \\
+    \end{array}\\
+    \end{matrix}
+\end{equation*}
+
+然后需要指出,不同于普通运算,逻辑代数的与运算和或运算具有同等优先级,这体现在交换律
+
+\textbf{交换律}
+\begin{align}
+	\boldsymbol{A}\cdot \left( \boldsymbol{B}+\boldsymbol{C} \right) &=\left( \boldsymbol{A}\cdot \boldsymbol{B} \right) +\left( \boldsymbol{A}\cdot \boldsymbol{C} \right)\\
+	\boldsymbol{A}+\left( \boldsymbol{B}\cdot \boldsymbol{C} \right) &=\left( \boldsymbol{A}+\boldsymbol{B} \right) \cdot \left( \boldsymbol{A}+\boldsymbol{C} \right)
+\end{align}
+
+\textbf{结合律}
+\begin{align}
+	\boldsymbol{A}\cdot \boldsymbol{B}\cdot \boldsymbol{C}&=\left( \boldsymbol{A}\cdot \boldsymbol{B} \right) \cdot \boldsymbol{C}=\boldsymbol{A}\cdot \left( \boldsymbol{B}\cdot \boldsymbol{C} \right)\\
+	\boldsymbol{A}+\boldsymbol{B}+\boldsymbol{C}&=\left( \boldsymbol{A}+\boldsymbol{B} \right) +\boldsymbol{C}=\boldsymbol{A}+\left( \boldsymbol{B}+\boldsymbol{C} \right)
+\end{align}
+
+\textbf{交换律}
+\begin{align}
+	\boldsymbol{A}+\boldsymbol{B}&=\boldsymbol{B}+\boldsymbol{A}\\
+	\boldsymbol{A}\cdot \boldsymbol{B}&=\boldsymbol{B}\cdot \boldsymbol{A}
+\end{align}
+
+\textbf{反演律}
+\begin{align}
+	\overline{\boldsymbol{A}\cdot \boldsymbol{B}}&=\overline{\boldsymbol{A}}+\overline{\boldsymbol{B}}\\
+	\overline{\boldsymbol{A}+\boldsymbol{B}}&=\overline{\boldsymbol{A}}\cdot \overline{\boldsymbol{B}}
+\end{align}
+
+另有一些常用的公式:
+
+\textbf{合并律}

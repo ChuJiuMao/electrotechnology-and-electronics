@@ -1,0 +1,55 @@
+\section{\K 三相异步电动机的起动}
+\subsection{\K 讨论起动问题的必要性}
+\Par 电机起动时,$n=0,s=1$,这导致转子的电流过大,线路发热增加,一般起动电流与额定电流之比达到$5\sim 7$倍,根据
+\begin{equation*}
+    Q=I^2R
+\end{equation*}
+可以知道,电路的热损耗在启动时将激增$25\sim 49$倍,这将导致严重的发热问题,尤其是起动频繁的电机,降低起动电流势在必行!
+
+\Par 其次,启动电流的增大将导致负载电压降低,根据
+\begin{equation*}
+    T=K\cdot \frac{sR_2U_{1}^{2}}{R_{2}^{2}+\left( sX_{20} \right) ^2}=K\cdot \left( \frac{N_2}{N_1} \right) ^2\frac{sR_2U_{2}^{2}}{R_{2}^{2}+\left( sX_{20} \right) ^2}
+\end{equation*}
+可以知道$T\propto U_{2}^{2}$,这将导致连接在同一线路上的其他电机转矩降低,而当动力转矩小于负载转矩时,电机有可能直接停摆!对于它自己,$T_{st}$可能大于$T_N$也可能小于$T_N$,根据实际情况,若$T_{st}$过大,可能会使传动装置崩坏,而$T_{st}$过小,可能使其在有载状态下无法起动.
+
+\subsection{\K 起动方法}
+\begin{enumerate}
+    \item[\circledtext{1}]直接起动
+    
+    \Par 对于起动电流较小的电机,可以采取直接起动,而能否直接起动可以用经验公式
+    \begin{equation}
+        \frac{I_{st}}{I_N}\le \frac{3}{4}+\frac{\text{电源总容量}\left( \mathrm{kV}\cdot \mathrm{A} \right)}{4\times \text{起动电动机功率}\left( \mathrm{kW} \right)}
+    \end{equation}
+    予以判断
+    \item[\circledtext{2}]降压起动
+    
+    \Par 针对电压降过大的问题,我们可以采用星角变换以降低起动电流.原本转子电路为三角形连结,满足
+    \begin{equation*}
+        \begin{cases}
+            I_L=\sqrt{3}I_P\\
+            U_L=U_P\\
+        \end{cases}
+    \end{equation*}
+    变换成星形连结后满足
+    \begin{equation*}
+        \begin{cases}
+            I_L=I_P\\
+            U_L=\sqrt{3}U_P\\
+        \end{cases}
+    \end{equation*}变换前后,$U_L$均未发生变化,因此,在星形连结中
+    \begin{equation*}
+        I_{L\star}=I_{P\star}=\frac{U_P}{\left| Z \right|}=\frac{1}{\sqrt{3}}\cdot \frac{U_L}{\left| Z \right|}
+    \end{equation*}
+    而在三角形连结中
+    \begin{equation*}
+        I_{L\bigtriangleup}=\sqrt{3}I_{P\bigtriangleup}=\sqrt{3}\cdot \frac{U_P}{\left| Z \right|}=\sqrt{3}\cdot \frac{U_L}{\left| Z \right|}
+    \end{equation*}
+    从而有
+    \begin{equation*}
+        \frac{I_{L\star}}{I_{L\bigtriangleup}}=\frac{1}{3}
+    \end{equation*}
+    降低到原来的$1/3$,由于$U_{P}^{\prime}=U_L/\sqrt{3}=U_P/\sqrt{3}$,由$T\propto U^2$可知\begin{equation*}
+        \frac{T_{st}}{T_{st}^{\prime}}=\frac{1}{3}
+    \end{equation*}
+    可见,降低起动电流虽然有效的降低了发热,但也降低了起动转矩,因此它仅适用于空载或是低载起动.
+\end{enumerate}

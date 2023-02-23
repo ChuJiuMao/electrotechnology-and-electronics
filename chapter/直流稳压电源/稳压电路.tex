@@ -1,0 +1,92 @@
+\section{\K 稳压电路}
+\subsection{\K 稳压二极管稳压}
+\Par 如图\ref{fig:稳压二极管稳压}所示,我们可以选取稳压二极管稳压,而选取的稳压二极管参数一般为
+\begin{equation*}
+    \begin{cases}
+        U_Z=U_O\\
+        U_1=2\sim 3U_O\\
+        I_{ZM}=1.5\sim 3I_{OM}\\
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.45\textwidth]{稳压二极管稳压.png}
+	\caption{稳压二极管稳压}
+	\label{fig:稳压二极管稳压}
+\end{figure}
+
+但是稳压二极管稳压是有缺陷的,一方面它的稳压电压是无法改变的,另一方面,它要求负载电路的电压与它的稳压电压相差不大,因此我们还需要更好的选择.
+
+\subsection{\K 集成稳压电源}
+\Par 我们介绍三种集成稳压电源:
+\begin{enumerate}[ ]
+    \item W78XX系列:输出固定正电压;
+    \item W79XX系列:输出固定负电压;
+    \item W117/217/317系列:输出可变电压.
+\end{enumerate}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.35\textwidth]{集成稳压电源.jpg}
+	\caption{集成稳压电源}
+	\label{fig:集成稳压电源}
+\end{figure}
+
+\Par 如图\ref{fig:集成稳压电源}所示,集成稳压电源有三个引脚,分别标记为1、2、3,对于塑料封装的W78XX系列集成稳压电源来说,1输入,2接地,3输出;对于塑料封装的W79XX系列集成稳压电源来说,1接地,2输入,3输出.至于金属封装,可以见下图.
+\begin{equation*}
+    \begin{array}{l}
+        \text{塑料W}78\text{XX系列}\begin{cases}
+        {\color[RGB]{0, 0, 240} 1\text{输入}}\\
+        2\text{接地}\\
+        {\color[RGB]{240, 0, 0} 3\text{输出}}\\
+    \end{cases}\Longleftrightarrow \text{金属W}78\text{XX系列}\begin{cases}
+        {\color{blue} 1\text{输入}}\\
+        {\color[RGB]{240, 0, 0} 2\text{输出}}\\
+        3\text{接地}\\
+    \end{cases}\\
+        \text{塑料W}79\text{XX系列}\begin{cases}
+        1\text{接地}\\
+        {\color[RGB]{0, 0, 240} 2\text{输入}}\\
+        {\color[RGB]{240, 0, 0} 3\text{输出}}\\
+    \end{cases}\Longleftrightarrow \text{金属W}79\text{XX系列}\begin{cases}
+        1\text{接地}\\
+        {\color[RGB]{240, 0, 0} 2\text{输出}}\\
+        {\color[RGB]{0, 0, 240} 3\text{输入}}\\
+    \end{cases}\\
+    \end{array}
+\end{equation*}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.35\textwidth]{集成稳压基本电路.jpg}
+	\caption{集成稳压基本电路}
+	\label{fig:集成稳压基本电路}
+\end{figure}
+\Par 如图\ref{fig:集成稳压基本电路}所示,它是集成稳压基本电路,左边的电容用于抵消输入端较长接线的电感效应,防止产生自激振荡;右边的电容用于防止瞬时增减负载电流,不致引起输出电压有较大的波动.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.65\textwidth]{正负输出稳压电路.jpg}
+	\caption{正负输出稳压电路}
+	\label{fig:正负输出稳压电路}
+\end{figure}
+
+\Par 如图\ref{fig:正负输出稳压电路}所示,这是一个正负输出稳压电路,分析上面的W7815稳压电源:首先,220V交流电源经过变压器转换成24V的交流电,经过单相桥式整流电路,将交流电转换成直流电并经过电桥滤波电路,接到集成稳压电源W7815的接口1.
+
+\Par 这里W7815的“15”表示输出电压是15V,W78XX就表示输出电压是XXV.
+
+\Par 接到集成稳压电源W7815的接口1后,我们可以注意到它的接口3接地,接口2输出15V的稳压直流电,因此我们可以判断它是金属封装.
+
+\Par 对于集成稳压电源W7915也是同样,通过观察,我们知道它接口3输入,接口1接地,接口2输出,因此它也是金属封装.由于W7915输出的是负电压,因此它输出$-15$V电压.
+
+\Par 那么W78XX/W79XX系列真的完全不能调整电压吗,当然可以,只是需要魔改.试看下面的电路:
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.45\textwidth]{电压可调稳压电路.png}
+	\caption{电压可调稳压电路}
+	\label{fig:电压可调稳压电路}
+\end{figure}
+
+我们可以发现它应当是金属封装W78XX系列,接口2、3之间的电压是$U_{XX}$,同时接口3与集成运算放大器的输出端相连,集成运算放大器工作在线性区,根据我们之前的讨论可以知道它具有\textbf{虚断}和\textbf{虚短}的特性.那么,集成运算放大器的负向输入端电位就与接口3的电位V$_3$相等,而根据虚短原则,可以知道正向输入端的电位也应当是V$_3$,那么根据分压原理就有
+\begin{equation}
+    U_{XX}=U_2=\frac{R_2}{R_1+R_2}U_O\Longrightarrow U_O=\left( 1+\frac{R_1}{R_2} \right) U_{XX}
+\end{equation}
